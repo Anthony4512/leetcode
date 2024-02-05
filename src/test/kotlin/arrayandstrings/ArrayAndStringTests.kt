@@ -1,7 +1,10 @@
 package arrayandstrings
 
 import org.example.arrayandstrings.isPalindrome
+import org.example.arrayandstrings.mergeSortedArrays
+import org.example.arrayandstrings.twoSumSorted
 import org.junit.jupiter.api.Test
+import kotlin.test.assertContentEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -20,6 +23,37 @@ class ArrayAndStringTests {
         val input = "racecars"
         val isPalindrome = isPalindrome(input)
         assertFalse(isPalindrome)
+    }
+
+    // TwoSum Sorted tests
+    @Test
+    fun `Should return false when no numbers sums up to target number`() {
+        val input = intArrayOf(1, 2, 3, 6, 8, 9, 14, 15)
+        val target = 13
+        val answer = twoSumSorted(input, target)
+
+        assertFalse(answer)
+    }
+
+    @Test
+    fun `Should return true when 2 numbers sums up to target number`() {
+        val input = intArrayOf(1, 2, 4, 6, 8, 9, 14, 15)
+        val target = 13
+        val answer = twoSumSorted(input, target)
+
+        assertTrue(answer)
+    }
+
+    // ArrayMerge
+    @Test
+    fun `Should return merged sorted array`() {
+        val arr1 = intArrayOf(1,3,5,7,8,9,16)
+        val arr2 = intArrayOf(2,4,6,9,10,12,15)
+        val expectedArray = intArrayOf(1,2,3,4,5,6,7,8,9,9,10,12,15,16)
+
+        val answer = mergeSortedArrays(arr1, arr2)
+
+        assertContentEquals(expectedArray, answer)
     }
 
 }
