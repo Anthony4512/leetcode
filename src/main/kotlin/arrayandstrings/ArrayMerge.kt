@@ -12,18 +12,11 @@ fun mergeSortedArrays(arr1: IntArray, arr2: IntArray): IntArray {
     val mergedArray = IntArray(arr1.size + arr2.size)
 
     while (left < arr1.size && right < arr2.size) {
-        if (arr1[left] < arr2[right]) {
+        if (arr1[left] <= arr2[right]) {
             mergedArray[currentIndex] = arr1[left]
             currentIndex++
             left++
         } else if (arr2[right] < arr1[left]) {
-            mergedArray[currentIndex] = arr2[right]
-            currentIndex++
-            right++
-        } else if (arr2[right] == arr1[left]) {
-            mergedArray[currentIndex] = arr1[left]
-            currentIndex++
-            left++
             mergedArray[currentIndex] = arr2[right]
             currentIndex++
             right++

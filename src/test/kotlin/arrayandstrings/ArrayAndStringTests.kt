@@ -2,11 +2,10 @@ package arrayandstrings
 
 import org.example.arrayandstrings.isPalindrome
 import org.example.arrayandstrings.mergeSortedArrays
+import org.example.arrayandstrings.reverseString
 import org.example.arrayandstrings.twoSumSorted
 import org.junit.jupiter.api.Test
-import kotlin.test.assertContentEquals
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 class ArrayAndStringTests {
 
@@ -54,6 +53,19 @@ class ArrayAndStringTests {
         val answer = mergeSortedArrays(arr1, arr2)
 
         assertContentEquals(expectedArray, answer)
+    }
+
+    // ReverseString
+    @Test
+    fun `Should return the reverse string of any string input`() {
+        val inputCharArr = charArrayOf('h','o','u','s','e')
+        val expectedOutput = charArrayOf('e','s','u','o','h')
+
+        assertNotEquals(inputCharArr.joinToString(), expectedOutput.joinToString())
+
+        reverseString(inputCharArr)
+
+        assertEquals(expectedOutput.joinToString(), inputCharArr.joinToString())
     }
 
 }
