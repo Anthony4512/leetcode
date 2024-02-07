@@ -1,9 +1,6 @@
 package arrayandstrings
 
-import org.example.arrayandstrings.isPalindrome
-import org.example.arrayandstrings.mergeSortedArrays
-import org.example.arrayandstrings.reverseString
-import org.example.arrayandstrings.twoSumSorted
+import org.example.arrayandstrings.*
 import org.junit.jupiter.api.Test
 import kotlin.test.*
 
@@ -66,6 +63,17 @@ class ArrayAndStringTests {
         reverseString(inputCharArr)
 
         assertEquals(expectedOutput.joinToString(), inputCharArr.joinToString())
+    }
+
+    //SquareOfSortedArray
+    @Test
+    fun `Should return a sorted array of the squares of the input array`() {
+        val inputArray = intArrayOf(-4,-1,0,3,10)
+        val expectedOutputArray = intArrayOf(0,1,9,16,100)
+
+        val outputArray = squaresOfSortedArray(inputArray)
+
+        assertContentEquals(expectedOutputArray, outputArray)
     }
 
 }
