@@ -88,4 +88,15 @@ class ArrayAndStringTests {
         assertEquals(expectedOutput, currentOutput)
     }
 
+    // LengthOfSubString
+    @Test
+    fun `Should return the length of the longest subString that only contains 1s and at most one 0`() {
+        val inputString = "1101100111"
+        val expectedOutput = 5
+
+        val currentOutput = findLongestSubString(inputString)
+
+        assertEquals(expectedOutput, currentOutput)
+    }
+
 }
