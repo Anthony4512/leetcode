@@ -76,4 +76,16 @@ class ArrayAndStringTests {
         assertContentEquals(expectedOutputArray, outputArray)
     }
 
+    // LengthOfSubArray
+    @Test
+    fun `Should return the length of the longest sub array that sums to k`() {
+        val arr = intArrayOf(3, 1, 2, 7, 4, 2, 1, 1, 5)
+        val k = 8
+        val expectedOutput = 4
+
+        val currentOutput = findLengthOfSubArray(arr, k)
+
+        assertEquals(expectedOutput, currentOutput)
+    }
+
 }
