@@ -99,4 +99,29 @@ class ArrayAndStringTests {
         assertEquals(expectedOutput, currentOutput)
     }
 
+    // SubArrayProductLessThanK
+    @Test
+    fun `Should return all sub arrays that their product is less than k`() {
+        val inputArr = intArrayOf(10,5,2,6)
+        val k = 100
+        val expectedOutput = 8
+
+        val currOutput = numSubarrayProductLessThanK(inputArr, k)
+
+        assertEquals(expectedOutput, currOutput)
+    }
+
+    @Test
+    fun `Should return 0 when k is one or less`() {
+        val inputArr = intArrayOf(10,5,2,6)
+        val k = 1
+        val expectedOutput = 0
+
+        val currOutput = numSubarrayProductLessThanK(inputArr, k)
+
+        assertEquals(expectedOutput, currOutput)
+    }
+
+
+
 }
