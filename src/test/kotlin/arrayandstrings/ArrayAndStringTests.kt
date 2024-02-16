@@ -122,6 +122,16 @@ class ArrayAndStringTests {
         assertEquals(expectedOutput, currOutput)
     }
 
+    @Test
+    fun `Should return the largest sum of sub array of size k`() {
+        val inputArray = intArrayOf(3,-1,4,12,-8,5,6)
+        val k = 4
+        val expectedOutput = 18
+
+        val output = findLargestSumWithSubArrayOfSizeK(inputArray, k)
+
+        assertEquals(expectedOutput, output)
+    }
 
 
 }
