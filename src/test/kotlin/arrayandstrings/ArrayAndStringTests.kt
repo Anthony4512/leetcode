@@ -122,6 +122,7 @@ class ArrayAndStringTests {
         assertEquals(expectedOutput, currOutput)
     }
 
+    // LargestSumSubArrayOfSizeK
     @Test
     fun `Should return the largest sum of sub array of size k`() {
         val inputArray = intArrayOf(3,-1,4,12,-8,5,6)
@@ -132,6 +133,19 @@ class ArrayAndStringTests {
 
         assertEquals(expectedOutput, output)
     }
+
+    // MaximumAverageSubArray
+    @Test
+    fun `Should return the sub array with the largest average of size k`() {
+        val inputArray = intArrayOf(1,12,-5,-6,50,3)
+        val k = 4
+        val expectedOutput = 12.75
+
+        val output = findMaximumAverageSubArray(inputArray, k)
+
+        assertEquals(expectedOutput, output)
+    }
+
 
 
 }
