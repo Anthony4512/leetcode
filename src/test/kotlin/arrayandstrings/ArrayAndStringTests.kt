@@ -146,6 +146,17 @@ class ArrayAndStringTests {
         assertEquals(expectedOutput, output)
     }
 
+    // MaxConsecutiveOnes
+    @Test
+    fun `Should return the max number of consecutive ones flipping at most k number of 0's`() {
+        val inputArray = intArrayOf(0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1)
+        val k = 3
+        val expectedOutput = 10
+
+        val output = maxConsecutiveOnesIII(inputArray, k)
+
+        assertEquals(expectedOutput, output)
+    }
 
 
 }
