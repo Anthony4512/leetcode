@@ -1,8 +1,8 @@
 package arrayandstrings
 
 import org.example.arrayandstrings.*
-import org.junit.jupiter.api.Test
 import kotlin.test.*
+import kotlin.test.Test
 
 class ArrayAndStringTests {
 
@@ -19,6 +19,13 @@ class ArrayAndStringTests {
         val input = "racecars"
         val isPalindrome = isPalindrome(input)
         assertFalse(isPalindrome)
+    }
+
+    @Test
+    fun `Should return true if the string is palindrome deleting at most 1 character`() {
+        assertFalse(almostPalindrome("aamanaman"))
+        assertTrue(almostPalindrome("amanaman"))
+        assertFalse(almostPalindrome("amanaaman"))
     }
 
     // TwoSum Sorted tests
