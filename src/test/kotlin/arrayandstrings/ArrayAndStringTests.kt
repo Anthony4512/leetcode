@@ -198,5 +198,24 @@ class ArrayAndStringTests {
 
     }
 
+    //MinimumPositiveValue
+    @Test
+    fun `Should return the minimum positive value such that the step by step sum is never less than 1`() {
+        val inputs = listOf(
+            intArrayOf(-3,2,-3,4,2),
+            intArrayOf(1,2),
+            intArrayOf(1,-2,-3),
+            intArrayOf(2,3,5,-5,-1)
+        )
+        val expectedOutputs = listOf(5,1,5,1)
+        val output = mutableListOf<Int>()
+
+        inputs.forEach { input ->
+            output.add(minimumPositiveValue(input))
+        }
+
+        assertContentEquals(expectedOutputs, output)
+    }
+
 
 }
