@@ -178,5 +178,25 @@ class ArrayAndStringTests {
         assertContentEquals(expectedResult, results)
     }
 
+    // NumberOfWaysToSplitNumberArray
+    @Test
+    fun `Should return the number of ways that a array of integers could be split where the left side sum is greater than right side sum`() {
+        val inputs = listOf(
+            intArrayOf(10,4,-8,7),
+            intArrayOf(2,3,1,0),
+            intArrayOf(-2,-1),
+            intArrayOf(-5,-7,-4,-3)
+        )
+        val expectedOutputs = listOf(2,2,0,1)
+        val output = mutableListOf<Int>()
+
+        inputs.forEach { input ->
+            output.add(numberOfWaysToSplitArray(input))
+        }
+
+        assertContentEquals(expectedOutputs, output)
+
+    }
+
 
 }
