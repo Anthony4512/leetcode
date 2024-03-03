@@ -217,5 +217,30 @@ class ArrayAndStringTests {
         assertContentEquals(expectedOutputs, output)
     }
 
+    // KRadiusSubArrayAverage
+    @Test
+    fun `Should return the average of subarray with a radius of k`() {
+        val inputs = listOf(
+            intArrayOf(7,4,3,9,1,8,5,2,6),
+            intArrayOf(100000),
+            intArrayOf(8),
+        )
+        val ks = listOf(
+            3, 0, 100000
+        )
+        val expectedOutputs = listOf(
+            longArrayOf(-1,-1,-1,5,4,4,-1,-1,-1),
+            longArrayOf(100000),
+            longArrayOf(-1)
+        )
+        val outputs = mutableListOf<LongArray>()
 
+        for (i in inputs.indices) {
+            outputs.add(kRadiusSubArrayAverage(inputs[i], ks[i]))
+        }
+
+        for (i in outputs.indices) {
+            assertContentEquals(expectedOutputs[i], outputs[i])
+        }
+    }
 }
