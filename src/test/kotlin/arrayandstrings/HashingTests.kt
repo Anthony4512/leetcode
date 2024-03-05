@@ -1,5 +1,6 @@
 package arrayandstrings
 
+import org.example.hashing.repeatedCharacters
 import org.example.hashing.twoSumIndicesAddUpToTarget
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
@@ -31,5 +32,20 @@ class HashingTests {
         for (i in outputs.indices) {
             assertContentEquals(expectedOutputs[i], outputs[i])
         }
+    }
+
+    // FirstRepeatingCharacter
+    @Test
+    fun `Should return the first repeating character`() {
+        val inputs = listOf("abccbaacz", "abcdd")
+        val expectedOutputs = listOf('c', 'd')
+        val outputs = mutableListOf<Char>()
+
+        inputs.forEach {
+            outputs.add(repeatedCharacters(it))
+        }
+
+        assertContentEquals(expectedOutputs, outputs)
+
     }
 }
