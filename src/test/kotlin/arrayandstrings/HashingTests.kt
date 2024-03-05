@@ -1,5 +1,6 @@
 package arrayandstrings
 
+import org.example.hashing.isSentencePangram
 import org.example.hashing.repeatedCharacters
 import org.example.hashing.twoSumIndicesAddUpToTarget
 import kotlin.test.Test
@@ -44,8 +45,19 @@ class HashingTests {
         inputs.forEach {
             outputs.add(repeatedCharacters(it))
         }
-
         assertContentEquals(expectedOutputs, outputs)
+    }
 
+    // PangramSentence
+    @Test
+    fun `Should return true if sentence contains all alphabet letters, false otherwise`() {
+        val inputs = listOf("thequickbrownfoxjumpsoverthelazydog", "leetcode")
+        val expectedOutputs = listOf(true, false)
+        val outputs = mutableListOf<Boolean>()
+
+        for (input in inputs) {
+            outputs.add(isSentencePangram(input))
+        }
+        assertContentEquals(expectedOutputs, outputs)
     }
 }
