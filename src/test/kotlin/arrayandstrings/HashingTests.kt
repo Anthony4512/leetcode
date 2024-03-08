@@ -1,6 +1,7 @@
 package arrayandstrings
 
 import org.example.hashing.isSentencePangram
+import org.example.hashing.missingNumber
 import org.example.hashing.repeatedCharacters
 import org.example.hashing.twoSumIndicesAddUpToTarget
 import kotlin.test.Test
@@ -59,5 +60,19 @@ class HashingTests {
             outputs.add(isSentencePangram(input))
         }
         assertContentEquals(expectedOutputs, outputs)
+    }
+
+    // MissingNumber
+    @Test
+    fun `Should return the missing number from 0 to the size of the nums array`() {
+        val inputs = listOf(intArrayOf(3,0,1), intArrayOf(0,1), intArrayOf(9,6,4,2,3,5,7,0,1))
+        val expectedOutputs = listOf(2,2,8)
+        val outputs = mutableListOf<Int>()
+
+        for (input in inputs) {
+            outputs.add(missingNumber(input))
+        }
+        assertContentEquals(expectedOutputs, outputs)
+
     }
 }
