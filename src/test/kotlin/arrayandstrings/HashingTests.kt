@@ -1,9 +1,6 @@
 package arrayandstrings
 
-import org.example.hashing.isSentencePangram
-import org.example.hashing.missingNumber
-import org.example.hashing.repeatedCharacters
-import org.example.hashing.twoSumIndicesAddUpToTarget
+import org.example.hashing.*
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 
@@ -74,5 +71,18 @@ class HashingTests {
         }
         assertContentEquals(expectedOutputs, outputs)
 
+    }
+
+    // CountingNumbers
+    @Test
+    fun `Should return the count of numbers in the array which number+1 exist in such array`() {
+        val inputs = listOf(intArrayOf(1,2,3), intArrayOf(1,1,3,3,5,5,7,7))
+        val expectedOutputs = listOf(2,0)
+        val outputs = mutableListOf<Int>()
+
+        for (input in inputs) {
+            outputs.add(countElements(input))
+        }
+        assertContentEquals(expectedOutputs, outputs)
     }
 }
