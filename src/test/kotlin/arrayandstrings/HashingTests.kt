@@ -3,6 +3,7 @@ package arrayandstrings
 import org.example.hashing.*
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
+import kotlin.test.assertEquals
 
 class HashingTests {
 
@@ -84,5 +85,18 @@ class HashingTests {
             outputs.add(countElements(input))
         }
         assertContentEquals(expectedOutputs, outputs)
+    }
+
+    //LongestDistinctCharSubArray
+    @Test
+    fun `Should return the longest distinct characters subarray with at most k distinct chars`() {
+        val input = "ecebababba"
+        val k = 2
+        val expectedOutput = 7
+
+        val output = longestDistinctCharSubString(input, k)
+
+        assertEquals(expectedOutput, output)
+
     }
 }
