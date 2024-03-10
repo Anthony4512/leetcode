@@ -97,6 +97,21 @@ class HashingTests {
         val output = longestDistinctCharSubString(input, k)
 
         assertEquals(expectedOutput, output)
+    }
 
+    //IntersectionOfMultipleArrays
+    @Test
+    fun `Should return the number that appears in all arrays sorted by ascending order`() {
+        val inputs = listOf(
+            arrayOf(intArrayOf(3,1,2,4,5), intArrayOf(1,2,3,4), intArrayOf(3,4,5,6)),
+            arrayOf(intArrayOf(1,2,3), intArrayOf(4,5,6)),
+            arrayOf(intArrayOf(7,34,45,10,12,27,13), intArrayOf(27,21,45,10,12,13))
+        )
+        val expectedOutputs = listOf(listOf(3,4), emptyList(), listOf(10,12,13,27,45))
+        val outputs = mutableListOf<List<Int>>()
+        for (input in inputs) {
+            outputs.add(intersection(input))
+        }
+        assertContentEquals(expectedOutputs, outputs)
     }
 }
