@@ -114,4 +114,18 @@ class HashingTests {
         }
         assertContentEquals(expectedOutputs, outputs)
     }
+
+    //AreOccurrenceEqual
+    @Test
+    fun `Should return true if the occurrence of all character in the string are equal`() {
+        val inputs = listOf("abacbc", "aaabb")
+        val expectedOutputs = listOf(true, false)
+        val outputs = mutableListOf<Boolean>()
+
+        for (input in inputs) {
+            outputs.add(areOccurrencesEqual(input))
+        }
+
+        assertContentEquals(expectedOutputs, outputs)
+    }
 }
