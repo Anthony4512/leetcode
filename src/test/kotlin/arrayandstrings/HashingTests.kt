@@ -128,4 +128,16 @@ class HashingTests {
 
         assertContentEquals(expectedOutputs, outputs)
     }
+
+    @Test
+    fun `Should return the number of times you can build the word balloon from a given string`() {
+        val inputs = listOf("nlaebolko", "loonbalxballpoon", "leetcode")
+        val expectedOutputs = listOf(1,2,0)
+        val outputs = mutableListOf<Int>()
+
+        for (input in inputs) {
+            outputs.add(maxNumberOfBalloons(input))
+        }
+        assertContentEquals(expectedOutputs, outputs)
+    }
 }
