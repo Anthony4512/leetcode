@@ -163,4 +163,14 @@ class HashingTests {
             assertContentEquals(expectedOutput[index], output)
         }
     }
+
+    @Test
+    fun `Should return the minimum number of consecutive cards you have to pick up to have a pair`() {
+        val inputs = listOf(intArrayOf(3,4,2,3,4,7), intArrayOf(1,0,5,3), intArrayOf(1,3,5,7,8,9,2,7,2,1,0,9))
+        val expectedOutputs = listOf(4,-1,3)
+
+        inputs.forEachIndexed { i, input ->
+            assertEquals(expectedOutputs[i], minimumCardPickup(input))
+        }
+    }
 }
