@@ -173,4 +173,19 @@ class HashingTests {
             assertEquals(expectedOutputs[i], minimumCardPickup(input))
         }
     }
+
+    @Test
+    fun `Should return the maximum sum of pair with equal sum of digit`() {
+        val inputs = listOf(
+            intArrayOf(18,43,36,13,7),
+            intArrayOf(10,12,19,14),
+            intArrayOf(368,369,307,304,384,138,90,279,35,396,114,328,251,364,300,191,438,467,183),
+            intArrayOf(229,398,269,317,420,464,491,218,439,153,482,169,411,93,147,50,347,210,251,366,401)
+        )
+        val expectedOutputs = listOf(54,-1,835,973)
+
+        inputs.forEachIndexed { i, input ->
+            assertEquals(expectedOutputs[i], maxSumOfPairWithEqualSumOfDigits(input))
+        }
+    }
 }
