@@ -188,4 +188,21 @@ class HashingTests {
             assertEquals(expectedOutputs[i], maxSumOfPairWithEqualSumOfDigits(input))
         }
     }
+
+    @Test
+    fun `Should return the number of equal number of pair of rows and columns`() {
+        val inputs = listOf(
+            arrayOf(intArrayOf(3,2,1),intArrayOf(1,7,6),intArrayOf(2,7,7)),
+            arrayOf(intArrayOf(3,1,2,2),intArrayOf(1,4,4,5),intArrayOf(2,4,2,2),intArrayOf(2,4,2,2)),
+            arrayOf(intArrayOf(3,1,2,2,2,2,2),intArrayOf(1,4,4,5,2,2,2),intArrayOf(2,4,2,2,2,2,2),
+        intArrayOf(2,4,2,2,2,2,2),intArrayOf(3,1,2,2,2,2,2),intArrayOf(1,4,4,5,2,2,2),intArrayOf(2,4,2,2,2,2,2)),
+            arrayOf(intArrayOf(13,13),intArrayOf(13,13)),
+            arrayOf(intArrayOf(11,1),intArrayOf(1,11))
+        )
+        val expectedOutputs = listOf(1,3,0,4,2)
+
+        inputs.forEachIndexed { i, input ->
+            assertEquals(expectedOutputs[i], equalPairs(input))
+        }
+    }
 }
