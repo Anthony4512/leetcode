@@ -146,8 +146,8 @@ class HashingTests {
         val inputs = listOf(arrayOf("eat", "tea", "tan", "ate", "nat", "bat"), arrayOf(""), arrayOf("a"))
         val expectedOutput = listOf(
             listOf(
-                listOf("eat","tea","ate"),
-                listOf("tan", "nat" ),
+                listOf("eat", "tea", "ate"),
+                listOf("tan", "nat"),
                 listOf("bat")
             ),
             listOf(
@@ -166,8 +166,9 @@ class HashingTests {
 
     @Test
     fun `Should return the minimum number of consecutive cards you have to pick up to have a pair`() {
-        val inputs = listOf(intArrayOf(3,4,2,3,4,7), intArrayOf(1,0,5,3), intArrayOf(1,3,5,7,8,9,2,7,2,1,0,9))
-        val expectedOutputs = listOf(4,-1,3)
+        val inputs =
+            listOf(intArrayOf(3, 4, 2, 3, 4, 7), intArrayOf(1, 0, 5, 3), intArrayOf(1, 3, 5, 7, 8, 9, 2, 7, 2, 1, 0, 9))
+        val expectedOutputs = listOf(4, -1, 3)
 
         inputs.forEachIndexed { i, input ->
             assertEquals(expectedOutputs[i], minimumCardPickup(input))
@@ -177,12 +178,34 @@ class HashingTests {
     @Test
     fun `Should return the maximum sum of pair with equal sum of digit`() {
         val inputs = listOf(
-            intArrayOf(18,43,36,13,7),
-            intArrayOf(10,12,19,14),
-            intArrayOf(368,369,307,304,384,138,90,279,35,396,114,328,251,364,300,191,438,467,183),
-            intArrayOf(229,398,269,317,420,464,491,218,439,153,482,169,411,93,147,50,347,210,251,366,401)
+            intArrayOf(18, 43, 36, 13, 7),
+            intArrayOf(10, 12, 19, 14),
+            intArrayOf(368, 369, 307, 304, 384, 138, 90, 279, 35, 396, 114, 328, 251, 364, 300, 191, 438, 467, 183),
+            intArrayOf(
+                229,
+                398,
+                269,
+                317,
+                420,
+                464,
+                491,
+                218,
+                439,
+                153,
+                482,
+                169,
+                411,
+                93,
+                147,
+                50,
+                347,
+                210,
+                251,
+                366,
+                401
+            )
         )
-        val expectedOutputs = listOf(54,-1,835,973)
+        val expectedOutputs = listOf(54, -1, 835, 973)
 
         inputs.forEachIndexed { i, input ->
             assertEquals(expectedOutputs[i], maxSumOfPairWithEqualSumOfDigits(input))
@@ -192,17 +215,34 @@ class HashingTests {
     @Test
     fun `Should return the number of equal number of pair of rows and columns`() {
         val inputs = listOf(
-            arrayOf(intArrayOf(3,2,1),intArrayOf(1,7,6),intArrayOf(2,7,7)),
-            arrayOf(intArrayOf(3,1,2,2),intArrayOf(1,4,4,5),intArrayOf(2,4,2,2),intArrayOf(2,4,2,2)),
-            arrayOf(intArrayOf(3,1,2,2,2,2,2),intArrayOf(1,4,4,5,2,2,2),intArrayOf(2,4,2,2,2,2,2),
-        intArrayOf(2,4,2,2,2,2,2),intArrayOf(3,1,2,2,2,2,2),intArrayOf(1,4,4,5,2,2,2),intArrayOf(2,4,2,2,2,2,2)),
-            arrayOf(intArrayOf(13,13),intArrayOf(13,13)),
-            arrayOf(intArrayOf(11,1),intArrayOf(1,11))
+            arrayOf(intArrayOf(3, 2, 1), intArrayOf(1, 7, 6), intArrayOf(2, 7, 7)),
+            arrayOf(intArrayOf(3, 1, 2, 2), intArrayOf(1, 4, 4, 5), intArrayOf(2, 4, 2, 2), intArrayOf(2, 4, 2, 2)),
+            arrayOf(
+                intArrayOf(3, 1, 2, 2, 2, 2, 2),
+                intArrayOf(1, 4, 4, 5, 2, 2, 2),
+                intArrayOf(2, 4, 2, 2, 2, 2, 2),
+                intArrayOf(2, 4, 2, 2, 2, 2, 2),
+                intArrayOf(3, 1, 2, 2, 2, 2, 2),
+                intArrayOf(1, 4, 4, 5, 2, 2, 2),
+                intArrayOf(2, 4, 2, 2, 2, 2, 2)
+            ),
+            arrayOf(intArrayOf(13, 13), intArrayOf(13, 13)),
+            arrayOf(intArrayOf(11, 1), intArrayOf(1, 11))
         )
-        val expectedOutputs = listOf(1,3,0,4,2)
+        val expectedOutputs = listOf(1, 3, 0, 4, 2)
 
         inputs.forEachIndexed { i, input ->
             assertEquals(expectedOutputs[i], equalPairs(input))
+        }
+    }
+
+    @Test
+    fun `Should return true if ransom note can be constructed from magazine letters, false otherwise`() {
+        val inputs = listOf(Pair("ab", "aa"), Pair("a", "b"), Pair("aa", "aab"), Pair("amihello", "helloworldhereiam"))
+        val expectedOutputs = listOf(false, false, true, true)
+
+        inputs.forEachIndexed { index, pair ->
+            assertEquals(expectedOutputs[index], canConstructRansomNote(pair.first, pair.second))
         }
     }
 }
