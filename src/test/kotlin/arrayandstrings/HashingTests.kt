@@ -255,4 +255,14 @@ class HashingTests {
             assertEquals(expectedOutputs[i], numOfJewelsInStones(input.first, input.second))
         }
     }
+
+    @Test
+    fun `Should return the length of the longest sub string without repeating character`() {
+        val inputs = listOf("abcabcbb", "bbbbb", "pwwkew")
+        val expectedOutputs = listOf(3,1,3)
+
+        inputs.forEachIndexed { index, input ->
+            assertEquals(expectedOutputs[index], lengthOfLongestSubstringWithoutRepeatingChars(input))
+        }
+    }
 }
