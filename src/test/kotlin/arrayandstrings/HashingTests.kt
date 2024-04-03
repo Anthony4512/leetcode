@@ -245,4 +245,14 @@ class HashingTests {
             assertEquals(expectedOutputs[index], canConstructRansomNote(pair.first, pair.second))
         }
     }
+
+    @Test
+    fun `Should return the number of individual jewels in stones`() {
+        val inputs = listOf(Pair("aA", "aAAbbbb"), Pair("z", "ZZ"))
+        val expectedOutputs = listOf(3,0)
+
+        inputs.forEachIndexed { i, input ->
+            assertEquals(expectedOutputs[i], numOfJewelsInStones(input.first, input.second))
+        }
+    }
 }
